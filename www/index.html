@@ -38,5 +38,26 @@
         <script type="text/javascript">
             app.initialize();
         </script>
+        <script src="https://da189i1jfloii.cloudfront.net/js/kinvey-phonegap-0.9.10.min.js"></script>
+            <script>
+    	    document.addEventListener('deviceready', function() {
+		    Kinvey.init({
+		    appKey: 'kid_eTYIN7KGTf',
+		    appSecret: 'a3bac5f51977458fafaea344b6'
+		    });
+		    }, false);
+
+     // At this point, set up is complete and we can ping the Kinvey service.
+	Kinvey.ping({
+	success: function(response) {
+	alert('Kinvey Ping Success. Kinvey Service is alive, version: ' + response.version + ', response: ' + response.kinvey);
+	},
+	error: function(error) {
+	alert('Kinvey Ping Failed. Response: ' + error.description);
+	}
+	});
+	}, false);
+</script>
+
     </body>
 </html>
